@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=Win-1251" /> 
+	<title>Терморегулятор</title> 
+	<link href='thermostat.css' rel='stylesheet'> 
+	<script src="thermostat.js"></script>
+	<base target="MySmartHome">	
+</head>
+<body BGCOLOR="#8FCF8F" Link="blue" VLink="blue" ALink="blue" onload="loadPage()"> 
+	
+	<span id="spanSendingStatus"></span>
+
+	<p><form id="formProgList" method="POST">
+		<TABLE BORDER=3 rules=all frame=border cellpadding=3>
+		<TR><TD COLSPAN=2 ALIGN=CENTER>
+		<H2>Программы работы</H2>
+		</TD></TR>
+
+		<TR><TD COLSPAN=2>
+		<div id="FileList"></div>
+		</TD></TR>
+
+		
+		<TR><TD COLSPAN=2 ALIGN=CENTER>
+		<H3>Редактирование программы работы</H3>
+		</TD></TR>
+		
+		<TR><TD>
+		Наименование
+		</TD><TD>
+		<input type="text" id="txtProgName" name="txtProgName" size="50" value="" />
+		</TD></TR>
+
+		<TR><TD COLSPAN=2>
+		<input type="checkbox" id="chkProgSync" name="chkProgSync"><span>Зацикленность и синхронизация с началом суток</span>
+		</TD></TR>
+		
+		<TR><TD COLSPAN=2>
+		Список периодов<BR>
+		<div id="PeriodList"></div>
+		</TD></TR>
+
+		<TR><TD COLSPAN=2 ALIGN=CENTER>
+		<input type="button" id="btnProgAdd" value="Добавить программу"/>
+		<input type="button" id="btnProgSave" value="Сохранить программу"/>
+		</TD></TR>
+		
+		
+		<TR><TD COLSPAN=2 ALIGN=CENTER>
+		<H4>Период</H4>
+		</TD></TR>
+		
+		<TR><TD>
+		Температура
+		</TD><TD>
+		от <input type="text" id="PeriodT1" name="PeriodT1" size="20">
+		до <input type="text" id="PeriodT2" name="PeriodT2" size="20">
+		</TD></TR>
+		
+		<TR><TD>
+		Длительность
+		</TD><TD>
+		<input type="text" id="PeriodTime" name="PeriodTime"> (например 1h20m)
+		</TD></TR>
+
+		<TR><TD COLSPAN=2>
+		<input type="checkbox" id="PeriodCounting" name="PeriodCounting" checked><span>Отсчет времени с момента достижения температуры</span>
+		</TD></TR>
+
+		<TR><TD>
+		Пояснение
+		</TD><TD>
+		<input type="text" id="PeriodName" name="PeriodName" size="50" value="" />
+		</TD></TR>
+
+		<TR><TD COLSPAN=2 ALIGN=CENTER>
+		<input type="button" id="btnPeriodAdd" value="Добавить период"/>
+		<input type="button" id="btnPeriodSave" value="Сохранить период"/>
+		</TD></TR>
+		
+		</TABLE>
+
+		<div id="SaveState"></div>
+	</form>
+
+	
+</body>
+</html>
+
